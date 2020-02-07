@@ -1,0 +1,48 @@
+﻿<Window x:Class="book.Maneger_A"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:book"
+        mc:Ignorable="d"
+        Title="Maneger_A" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Content="book shop" FontSize="16"></Label>
+        <Button x:Name="but_exit" Content="Выход" HorizontalAlignment="Right" VerticalAlignment="Top" Width="40" Height="20" Grid.Column="0" Click="but_exit_Click"></Button>
+        <Grid Grid.Row="1">
+            <TabControl>
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Ellipse Width="10" Height="10" Fill="DarkGray"  Margin="3,3,3,3"/>
+                            <TextBlock>Редакция данных</TextBlock>
+                        </StackPanel>
+                    </TabItem.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2.5*"/>
+                            <ColumnDefinition Width="5*"/>
+                        </Grid.ColumnDefinitions>
+                        <DataGrid x:Name="datagrid_spisok" Grid.Column="1"></DataGrid>
+                        <StackPanel HorizontalAlignment="Center">
+                            <Label Content="редактирование" Margin="0,20,0,0"></Label>
+                            <TextBox Margin="0,20,0,0"></TextBox>
+                        </StackPanel>
+                    </Grid>
+                </TabItem>
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Ellipse Width="10" Height="10" Fill="DarkGray"  Margin="3,3,3,3"/>
+                            <TextBlock>Добавление данных</TextBlock>
+                        </StackPanel>
+                    </TabItem.Header>
+                </TabItem>
+            </TabControl>
+        </Grid>
+    </Grid>
+</Window>

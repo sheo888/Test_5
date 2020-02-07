@@ -1,0 +1,53 @@
+﻿<Window x:Class="book.storekeeper"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:book"
+        mc:Ignorable="d"
+        Title="storekeeper" Height="550" Width="800">
+    <Grid ShowGridLines="True">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="47*"></RowDefinition>
+            <RowDefinition Height="13*"></RowDefinition>
+            <RowDefinition Height="200*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Content="book shop" FontSize="16" Height="32" Margin="354,32,354,30" Width="84"></Label>
+        <Button x:Name="but_exit" Content="Выход" HorizontalAlignment="Right" VerticalAlignment="Top" Width="40" Height="20" Grid.Column="0" Click="but_exit_Click"></Button>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Button x:Name="dobav_but" Content="Добавить"></Button>
+            <Button x:Name="izmena_but" Content="Изменить"></Button>
+            <Button x:Name="delete_but" Content="Удалить" Click="delete_but_Click"></Button>
+            <Label x:Name="Time_labl" Width="120"></Label>
+        </StackPanel>
+        <Grid Grid.Row="2" ShowGridLines="True">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="142*"></ColumnDefinition>
+                <ColumnDefinition Width="142*"></ColumnDefinition>
+                <ColumnDefinition Width="508*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <!--<Line X1="0" Y1="1" X2="550" Y2="1" Stroke="Black" StrokeThickness="1"></Line>-->
+            <StackPanel Grid.Column="0" Orientation="Vertical" HorizontalAlignment="Center" Margin="5,0,5,0">
+                <Label Content="Имя" Margin="0,12,0,0"></Label>
+                <TextBox Margin="0,8,0,0" Name="name_textbox"></TextBox>
+                <Label Content="Фамилия" Margin="0,12,0,0"></Label>
+                <TextBox Margin="0,8,0,0" Name="famil_textbox"></TextBox>
+                <Label Content="Отчество" Margin="0,12,0,0"></Label>
+                <TextBox Margin="0,8,0,0" Name="otch_textbox"></TextBox>
+                <Label Content="Адрес" Margin="0,12,0,0"></Label>
+                <TextBox Margin="0,8,0,0" Name="adres_textbox"></TextBox>
+                <Label Content="Номер поставщика" Margin="0,12,0,0"></Label>
+                <TextBox Margin="0,8,0,0" Name="number_textbox"></TextBox>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Center" Margin="5,0,5,0">
+                <Label Content="Название товара" Margin="0,20,0,0"></Label>
+                <TextBox Margin="0,8,0,0" Name="nametovar_textbox"></TextBox>
+                <Label Content="Количество" Margin="0,20,0,0"></Label>
+                <TextBox Margin="0,8,0,0" Name="colichestvo_textbox"></TextBox>
+                <Label Content="Цена" Margin="0,20,0,0"></Label>
+                <TextBox Margin="0,8,0,0" Name="stoimost_textbox"></TextBox>
+            </StackPanel>
+            <DataGrid Grid.Column="2" ItemsSource="{Binding}" x:Name="Spisok_DataGrid" SelectionChanged="Spisok_DataGrid_SelectionChanged"></DataGrid>
+        </Grid>
+    </Grid>
+</Window>
